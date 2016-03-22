@@ -1,0 +1,32 @@
+<div class="container">
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <h1 class="title">Product</h1>
+    </div>
+    <div class='add-new-product-button col-md-2 col-md-offset-1'>
+
+      <%= button_to 'View All Products',
+            products_path,
+            class: "btn btn-danger",
+            method: :get %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="col-md-6">
+  <%= image_tag("#{@product.image_url}", class:'large-image-placeholder') %>
+</div>
+
+<div class="col-md-6"><br><br>
+<p>
+  <h2><%= @product.title %></h2>
+  <h3><%= @product.price %></h3>
+</p>
+<br>
+<br>
+<p> Price </p>
+
+</div>
+

@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <h1 class="title">Ye Olde Shoppe Products</h1>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <% @products.each do |product| %>
+
+        <div class='col-md-4'>
+          <%= link_to product_path(product) do %>
+            <%= image_tag("#{product.image_url}", class:'image-placeholder') %>
+            <h3 class="title"><%= product.title %></h3>
+            <h4> <%= product.price %> </h4>
+
+          <% end %>
+        </div>
+  <% end %>
+
+</div>

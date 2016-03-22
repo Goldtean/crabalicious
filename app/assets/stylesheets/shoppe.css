@@ -1,0 +1,48 @@
+.image-placeholder {
+  width: 300px;
+}
+
+.large-image-placeholder {
+  width: 450px;
+}
+
+.product-image {
+}
+
+.title {
+  text-align: center;
+  color: black;
+}
+
+.add-new-product-link {
+  color: white;
+}
+
+.add-new-product-button {
+  margin-top: 25px;
+}
+
+.create-new-line {
+  display: inline-block;
+}
+
+
+.submit-button {
+  margin-right: 10px;
+}
+
+.delete-button {
+  margin-right: 10px;
+  margin-left: 15px;
+
+}
+
+.submit-button, .cancel-button, .edit-button, .delete-button {
+  float: left;
+  display: inline-block;
+}
+
+.view-all-product-button{
+  margin-left: 25px;
+}
+

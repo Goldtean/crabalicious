@@ -1,0 +1,48 @@
+<div class="container">
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <h1 class="title">Ye Olde Shoppe Products</h1>
+    </div>
+    <div class='add-new-product-button col-md-2 col-md-offset-1'>
+
+      <%= button_to 'Add New Product',
+            new_product_path,
+            class: "btn btn-danger",
+            method: :get %>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+	<table style="width:100%" class='table-hover table-responsive'>
+		<tr>
+			<th> Image </th>
+			<th> Title </th>
+			<th> Stock </th>
+			<th> Price </th>
+			<th>  </th>
+		<tr>
+
+
+	  <% @products.each do |product| %>
+		<tr>
+	          <%= link_to product_path(product) do %>
+	            <td><%= image_tag("#{product.image_url}", class:'image-placeholder') %></td>
+	            <td><h3 class="title"> <%= product.title %></h3></td>
+	            <td><h4><%= product.stock %> </h4></td>
+	            <td><h4><%= product.price %> </h4></td>
+
+	            <td><%= button_to 'Edit',
+	              edit_product_path(product),
+	              class: "btn btn-danger edit-button",
+	              method: :get %>
+				<%= button_to 'Delete',
+	              product_path(product),
+	              class: "btn btn-danger delete-button",
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %></td>
+	          <% end %>
+	    </tr>
+	  <% end %>
+	</table>
+</div>

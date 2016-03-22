@@ -1,0 +1,7 @@
+<h1 class="title">New Product</h1>
+
+<%= form_for :product, url: products_path, method: :post do |f| %>
+<div class="row">
+<%= render 'form' %>
+</div>
+<% end %>

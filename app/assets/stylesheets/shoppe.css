@@ -1,5 +1,17 @@
+*{
+  /*outline: 1px solid blue;*/
+}
+
+.image-placeholder-index {
+  width: 300px;
+  height: auto;
+  bottom: 100px;
+  position: absolute;
+}
+
 .image-placeholder {
   width: 300px;
+  height: auto;
 }
 
 .large-image-placeholder {
@@ -10,6 +22,7 @@
 }
 
 .title {
+  /*display: inline-block;*/
   text-align: center;
   color: black;
 }
@@ -46,3 +59,21 @@
   margin-left: 25px;
 }
 
+.product-align-bottom-price {
+  /*position: absolute;*/
+  margin-right: 50px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+
+.product-align-bottom-title {
+  margin-right: 50px;
+  /*position: absolute;*/
+  margin-top: 330px;
+  text-align: center;
+}
+
+.fixed-height {
+  height: 400px;
+}

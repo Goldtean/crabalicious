@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
 
-  http_basic_authenticate_with name: "jer", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "admin", password: "secret", except: [:index, :show]
 
   def admin
     @products = Product.all
-    render 'admin'
   end
 
   def index

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class='row'>
     <div class='col-md-6 col-md-offset-3'>
@@ -14,35 +15,36 @@
 </div>
 <hr>
 <div class="container">
-	<table style="width:100%" class='table-hover table-responsive'>
-		<tr>
-			<th> Image </th>
-			<th> Title </th>
-			<th> Stock </th>
-			<th> Price </th>
-			<th>  </th>
-		<tr>
+  <table style="width:100%" class='table-hover table-responsive'>
+    <tr>
+      <th> </th>
+      <th><h3> Title </h3></th>
+      <th><h3> Stock </h3></th>
+      <th><h3> Price </h3></th>
+      <th>  </th>
+    <tr>
 
 
-	  <% @products.each do |product| %>
-		<tr>
-	          <%= link_to product_path(product) do %>
-	            <td><%= image_tag("#{product.image_url}", class:'image-placeholder') %></td>
-	            <td><h3 class="title"> <%= product.title %></h3></td>
-	            <td><h4><%= product.stock %> </h4></td>
-	            <td><h4><%= product.price %> </h4></td>
+    <% @products.each do |product| %>
+    <tr>
+            <%= link_to product_path(product) do %>
+              <td><%= image_tag("#{product.image_url}", class:'image-placeholder') %></td>
+              <td><h4 class="title"> <%= product.title %></h4></td>
+              <td><h4><%= product.stock %> </h4></td>
+              <td><h4><%= product.price %> </h4></td>
 
-	            <td><%= button_to 'Edit',
-	              edit_product_path(product),
-	              class: "btn btn-danger edit-button",
-	              method: :get %>
-				<%= button_to 'Delete',
-	              product_path(product),
-	              class: "btn btn-danger delete-button",
-	              method: :delete,
-	              data: { confirm: 'Are you sure?' } %></td>
-	          <% end %>
-	    </tr>
-	  <% end %>
-	</table>
+              <td><%= button_to 'Edit',
+                edit_product_path(product),
+                class: "btn btn-danger edit-button",
+                method: :get %>
+              <%= button_to 'Delete',
+                product_path(product),
+                class: "btn btn-danger delete-button",
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+      </tr>
+      
+    <% end %>
+  </table>
 </div>

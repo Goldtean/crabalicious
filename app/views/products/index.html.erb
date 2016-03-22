@@ -14,9 +14,8 @@
           <%= link_to product_path(product) do %>
             <%= image_tag("#{product.image_url}", class:'image-placeholder') %>
             <h3 class="title"><%= product.title %></h3>
-            <h4> <%= product.price %> </h4>
-
           <% end %>
+           <h4 class="title"> $<%= product.price %> </h4>
         </div>
   <% end %>
 

@@ -154,3 +154,492 @@ Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
   [1m[35m (0.6ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 2265ms (Views: 2262.6ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (18.6ms)
+  Rendered products/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 37ms (Views: 26.6ms | ActiveRecord: 2.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 03:23:43.133689"], ["updated_at", "2016-03-23 03:23:43.133689"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  Rendered products/_form.html.erb (2.8ms)
+  Rendered products/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 03:23:43.157326"], ["updated_at", "2016-03-23 03:23:43.157326"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  Rendered products/_form.html.erb (2.7ms)
+  Rendered products/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "products"
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"title"=>"test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test"], ["created_at", "2016-03-23 03:23:43.176597"], ["updated_at", "2016-03-23 03:23:43.176597"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"title"=>"test"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test"], ["created_at", "2016-03-23 03:23:43.183046"], ["updated_at", "2016-03-23 03:23:43.183046"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"bad test"}}
+Unpermitted parameter: name
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered products/_form.html.erb (2.9ms)
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"name"=>"bad test"}}
+Unpermitted parameter: name
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (2.9ms)
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.208683"], ["updated_at", "2016-03-23 03:23:43.208683"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>"test2"}, "id"=>"25"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "products" SET "title" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["title", "test2"], ["updated_at", "2016-03-23 03:23:43.212998"], ["id", 25]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.219479"], ["updated_at", "2016-03-23 03:23:43.219479"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>"test2"}, "id"=>"26"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "products" SET "title" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["title", "test2"], ["updated_at", "2016-03-23 03:23:43.223528"], ["id", 26]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.228363"], ["updated_at", "2016-03-23 03:23:43.228363"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>nil}, "id"=>"27"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered products/_form.html.erb (2.8ms)
+  Rendered products/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.7ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.242206"], ["updated_at", "2016-03-23 03:23:43.242206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>nil}, "id"=>"28"}
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (4.0ms)
+  Rendered products/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.258381"], ["updated_at", "2016-03-23 03:23:43.258381"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 29]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 29]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test1"], ["created_at", "2016-03-23 03:23:43.268055"], ["updated_at", "2016-03-23 03:23:43.268055"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 30]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#index as HTML
+  Rendered products/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 03:23:43.286951"], ["updated_at", "2016-03-23 03:23:43.286951"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 31]]
+  Rendered products/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 03:23:43.295010"], ["updated_at", "2016-03-23 03:23:43.295010"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered products/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fab80d4a890@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#new as HTML
+Filter chain halted as #<Proc:0x007fab80d4a890@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 03:23:43.306672"], ["updated_at", "2016-03-23 03:23:43.306672"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"33"}
+Filter chain halted as #<Proc:0x007fab80d4a890@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:36:24 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 310ms (Views: 298.0ms | ActiveRecord: 3.2ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:36:25 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:36:25 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:40:05 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 249ms (Views: 236.6ms | ActiveRecord: 3.1ms)
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:40:05 -0700
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:40:05 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:41:22 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 247ms (Views: 234.2ms | ActiveRecord: 2.7ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:41:22 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:41:22 -0700
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:48:36 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 248ms (Views: 235.7ms | ActiveRecord: 3.8ms)
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:48:36 -0700
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:48:36 -0700
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:48:36 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:52:11 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 262ms (Views: 248.7ms | ActiveRecord: 2.6ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:52:11 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:52:11 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:52:11 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:53:34 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 253ms (Views: 241.6ms | ActiveRecord: 2.5ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:53:34 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:53:34 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:53:34 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:54:59 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 242ms (Views: 230.5ms | ActiveRecord: 2.5ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:54:59 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:54:59 -0700
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/product/1" for 127.0.0.1 at 2016-03-22 20:54:59 -0700
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 20:57:48 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 246ms (Views: 234.4ms | ActiveRecord: 3.0ms)
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 20:57:49 -0700
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 20:57:49 -0700
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/products" for 127.0.0.1 at 2016-03-22 20:57:49 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:01:59 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 247ms (Views: 234.5ms | ActiveRecord: 2.6ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:01:59 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:01:59 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:03:36 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 246ms (Views: 233.0ms | ActiveRecord: 3.7ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:03:36 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:03:36 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:04:01 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 248ms (Views: 231.5ms | ActiveRecord: 2.5ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:04:01 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:04:01 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:05:22 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 255ms (Views: 238.8ms | ActiveRecord: 2.8ms)
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:05:22 -0700
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:05:22 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:06:29 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 248ms (Views: 236.8ms | ActiveRecord: 2.6ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:06:29 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:06:29 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:08:12 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 250ms (Views: 235.8ms | ActiveRecord: 2.7ms)
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:08:12 -0700
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:08:12 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:08:12 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fcc71e8de20@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:16:34 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 248ms (Views: 232.9ms | ActiveRecord: 2.6ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:16:34 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:16:34 -0700
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:16:34 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fbe9bf720b8@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:18:08 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 250ms (Views: 237.6ms | ActiveRecord: 2.9ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:18:08 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:18:08 -0700
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:08 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fba5ee5e848@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:18:32 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 253ms (Views: 240.8ms | ActiveRecord: 2.6ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:18:32 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:18:32 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:32 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007f8f07c62ad0@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:36 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007f8f07c62ad0@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:39 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007f8f07c62ad0@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:39 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007f8f07c62ad0@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:18:40 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007f8f07c62ad0@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-03-22 21:23:58 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 249ms (Views: 235.7ms | ActiveRecord: 2.8ms)
+Started GET "/assets/application-23a0dc1b06f110cff6dd6a2988e270468375e2b2f57f820f94e3f4dc874e306a.css" for 127.0.0.1 at 2016-03-22 21:23:59 -0700
+Started GET "/assets/application-a0cf18fe32e9650569e2044e136f2eb5251f35ff95747b55cea3e7c38086eb92.js" for 127.0.0.1 at 2016-03-22 21:23:59 -0700
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:23:59 -0700
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fe37093b100@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/admin" for 127.0.0.1 at 2016-03-22 21:24:12 -0700
+Processing by ProductsController#admin as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/admin.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

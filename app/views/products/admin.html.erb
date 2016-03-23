@@ -17,11 +17,11 @@
 <div class="container">
   <table style="width:100%" class='table-hover table-responsive'>
     <tr>
-      <th> </th>
-      <th><h3> Title </h3></th>
-      <th><h3> Stock </h3></th>
-      <th><h3> Price </h3></th>
-      <th>  </th>
+      <th class="title col-md-2"> </th>
+      <th class="title col-md-2"><h3> Title </h3></th>
+      <th class="title col-md-2"><h3> Stock </h3></th>
+      <th class="title col-md-2"><h3> Price </h3></th>
+      <th class="title col-md-2">  </th>
     <tr>
 
 
@@ -30,8 +30,8 @@
             <%= link_to product_path(product) do %>
               <td><%= image_tag("#{product.image_url}", class:'image-placeholder') %></td>
               <td><h4 class="title"> <%= product.title %></h4></td>
-              <td><h4><%= product.stock %> </h4></td>
-              <td><h4><%= product.price %> </h4></td>
+              <td class="title"><h4><%= product.stock %> </h4></td>
+              <td class="title"><h4>$<%= product.price %> </h4></td>
 
               <td><%= button_to 'Edit',
                 edit_product_path(product),

@@ -1,34 +1,25 @@
 require 'rails_helper'
+require_relative '../support/auth_helper'
 
+#Passing tests with authentication details
 describe ProductsController, type: :controller do
+  render_views
 
-  describe 'GET #index' do
-    context 'without params[:letter]' do
-      it "renders the :index template" do
-        get :index
-        expect(response).to render_template :index
-      end
-    end
+  # login to http basic auth
+  include AuthHelper
+  before(:each) do
+    http_login
   end
 
-  describe 'GET #show' do
-    it "assigns the requested product to @product" do
-      test = Product.create(title:'test')
-      get :show, id: test
-      expect(assigns(:product)).to eq test
+  describe 'GET #admin' do
+    it "renders the :admin template" do
+      get :admin
+      expect(response).to render_template :admin
     end
-    it "renders the :show template" do
-      test = Product.create(title:'test')
-      get :show, id: test
-      expect(response).to render_template :show
-    end
+
   end
 
-  describe 'GET #new' do
-    it "assigns a new Product to @product" do
-      get :new
-      expect(assigns(:product)).to be_a_new(Product)
-    end
+   describe 'GET #new' do
     it "renders the :new template" do
       get :new
       expect(response).to render_template :new
@@ -48,16 +39,16 @@ describe ProductsController, type: :controller do
     end
   end
 
-  describe "POST #create" do
+    describe "POST #create" do
     it "saves the new product in the database" do
       tests = Product.all
       expect{
         post :create, product: {title: 'test'}
         }.to change(tests, :count).by(1)
       end
-      it "redirects to products#show" do
+      it "redirects to products#admin" do
         post :create, product: {title: 'test'}
-        expect(response).to redirect_to product_path(assigns(:product))
+        expect(response).to redirect_to admin_path
       end
 
       context "with invalid attributes" do
@@ -74,7 +65,7 @@ describe ProductsController, type: :controller do
         end
       end
 
-  describe 'PATCH #update' do
+      describe 'PATCH #update' do
     before :each do
       @product = Product.create(title: 'test1')
     end
@@ -89,7 +80,7 @@ describe ProductsController, type: :controller do
       it "redirects to the product" do
         patch :update, id: @product,
         product: { title: 'test2'}
-        expect(response).to redirect_to @product
+        expect(response).to redirect_to admin_path
       end
     end
 
@@ -122,6 +113,67 @@ describe ProductsController, type: :controller do
         delete :destroy, id: @product
         expect(response).to redirect_to products_url
       end
+  end
+
+end
+
+describe ProductsController, type: :controller do
+
+
+  describe 'GET #index' do
+    context 'without params[:letter]' do
+      it "renders the :index template" do
+        get :index
+        expect(response).to render_template :index
+      end
+    end
+  end
+
+  describe 'GET #show' do
+    it "assigns the requested product to @product" do
+      test = Product.create(title:'test')
+      get :show, id: test
+      expect(assigns(:product)).to eq test
+    end
+    it "renders the :show template" do
+      test = Product.create(title:'test')
+      get :show, id: test
+      expect(response).to render_template :show
+    end
+  end
+
+end
+
+
+describe ProductsController, type: :controller do
+  render_views
+
+  # login to http basic auth
+  include AuthHelper
+  before(:each) do
+    http_login_fail
+  end
+
+  describe 'GET #admin ' do
+    it "fails to render the :admin template without authentication" do
+      get :admin
+      expect(response).not_to render_template :admin
+    end
+  end
+
+  describe 'GET #new' do
+    it "renders the :new template" do
+      get :new
+      expect(response).not_to render_template :new
+    end
+  end
+
+  describe 'GET #edit' do
+    it "renders the :edit template" do
+      test = Product.create(title:'test')
+      get :edit, id: test
+      expect(assigns(:product)).not_to render_template :edit
+    end
   end
 
 end

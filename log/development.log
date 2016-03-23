@@ -8298,3 +8298,328 @@ Processing by ProductsController#admin as HTML
   [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
   Rendered products/admin.html.erb within layouts/application (5.5ms)
 Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 21:51:33 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 1011ms (Views: 1007.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/shoppe.self-5fcc8d575b433aba8cd384ae6979ce0d78cb068b9d63551b0683ec3ecc72f62a.css?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/placeholder-1eccaba2d5acce62bdf88c4a3aaa45d1694049aeea9f24013b81b5ed09a99ae5.jpg" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started GET "/assets/placeholder1-03397b32c1edf5e143617b4e8fe8d6ec4007691e6480467aa6dad3d6f7e2be6d.png" for ::1 at 2016-03-22 21:51:34 -0600
+
+
+Started DELETE "/products/7" for ::1 at 2016-03-22 21:51:41 -0600
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AWHP1HRAuu0UE+VndJvCGT+9JKC3jo13n4cgepVtE2nCcwfk5n45XANcR5aglLredkwvJKW4lPcFXqHQ1kmzuA==", "id"=>"7"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 7]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/products" for ::1 at 2016-03-22 21:51:41 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 21:52:01 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/products/2" for ::1 at 2016-03-22 21:52:17 -0600
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r9LtYPS99Oq0tBANj17ovHGIBSVlUKe4KVJGqY4Z5XpswCVQZoN3W6P7svxbUZB7OHkOoXdmvjizi8cDzT1Fqw==", "id"=>"2"}
+  [1m[35mProduct Load (0.5ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 2]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 19ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 21:52:17 -0600
+Processing by ProductsController#admin as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/admin.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 21:56:14 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 246ms (Views: 245.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/shoppe.self-5fcc8d575b433aba8cd384ae6979ce0d78cb068b9d63551b0683ec3ecc72f62a.css?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/placeholder-1eccaba2d5acce62bdf88c4a3aaa45d1694049aeea9f24013b81b5ed09a99ae5.jpg" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/assets/placeholder1-03397b32c1edf5e143617b4e8fe8d6ec4007691e6480467aa6dad3d6f7e2be6d.png" for ::1 at 2016-03-22 21:56:15 -0600
+
+
+Started GET "/products/1/edit" for ::1 at 2016-03-22 22:15:04 -0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered products/_form.html.erb (3.6ms)
+  Rendered products/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/products/1" for ::1 at 2016-03-22 22:15:31 -0600
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q3XAHyJ9M6kcOJRBRrC86MoZT75umBGT/aJecLWG+ZuAZwgvsEOwGAt3NrCSv8Qvg+hEOnyuCBNne9/a9qJZSg==", "product"=>{"title"=>"Crab", "image_url"=>"http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/750x422/quality/95/http://www.blogcdn.com/slideshows/images/slides/364/389/5/S3643895/slug/l/tesla-motors-inc-model-x-suv-reveal-1.jpg", "stock"=>"1000", "price"=>"1000.0"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/750x422/quality/95/http://www.blogcdn.com/slideshows/images/slides/364/389/5/S3643895/slug/l/tesla-motors-inc-model-x-suv-reveal-1.jpg"], ["updated_at", "2016-03-23 04:15:31.396049"], ["id", 1]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 10ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 22:15:31 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-22 22:19:19 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/4" for ::1 at 2016-03-22 22:19:21 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2016-03-22 22:19:23 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/3" for ::1 at 2016-03-22 22:19:25 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered products/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2016-03-22 22:19:26 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/5" for ::1 at 2016-03-22 22:19:29 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered products/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2016-03-22 22:19:30 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 22:19:33 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-22 22:21:10 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/3" for ::1 at 2016-03-22 22:21:11 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered products/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 22:21:45 -0600
+Processing by ProductsController#admin as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/admin.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2016-03-22 22:21:50 -0600
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-03-22 22:22:13 -0600
+Processing by ProductsController#admin as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/admin.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/shoppe.self-5fcc8d575b433aba8cd384ae6979ce0d78cb068b9d63551b0683ec3ecc72f62a.css?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/placeholder-1eccaba2d5acce62bdf88c4a3aaa45d1694049aeea9f24013b81b5ed09a99ae5.jpg" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/assets/placeholder1-03397b32c1edf5e143617b4e8fe8d6ec4007691e6480467aa6dad3d6f7e2be6d.png" for ::1 at 2016-03-22 22:22:13 -0600
+
+
+Started GET "/admin" for ::1 at 2016-03-22 22:22:26 -0600
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/shoppe.self-5fcc8d575b433aba8cd384ae6979ce0d78cb068b9d63551b0683ec3ecc72f62a.css?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/application.self-c4991312985bccd133f1f21ab2f6a5d0129a8416a91037313b14f05d7d2e7dde.css?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/placeholder-1eccaba2d5acce62bdf88c4a3aaa45d1694049aeea9f24013b81b5ed09a99ae5.jpg" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/assets/placeholder1-03397b32c1edf5e143617b4e8fe8d6ec4007691e6480467aa6dad3d6f7e2be6d.png" for ::1 at 2016-03-22 22:22:26 -0600
+
+
+Started GET "/products" for ::1 at 2016-03-22 22:22:28 -0600
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms)

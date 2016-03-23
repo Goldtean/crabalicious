@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @products = Product.all
     if @product.save
+      flash[:success] = "Product created!"
       redirect_to admin_path
     else
       render 'new'
@@ -36,6 +37,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @products = Product.all
     if @product.update(product_params)
+      flash[:success] = "Product updated!" 
       redirect_to admin_path
     else
       render 'edit'

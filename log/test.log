@@ -154,6 +154,53 @@ Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
   [1m[35m (0.6ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+<<<<<<< HEAD
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by ProductsController#admin as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/admin.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1546ms (Views: 1544.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (25.4ms)
+  Rendered products/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 45ms (Views: 35.4ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 00:23:42.566301"], ["updated_at", "2016-03-23 00:23:42.566301"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered products/_form.html.erb (2.4ms)
+  Rendered products/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 00:23:42.584641"], ["updated_at", "2016-03-23 00:23:42.584641"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered products/_form.html.erb (2.5ms)
+  Rendered products/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"title"=>"test"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test"], ["created_at", "2016-03-23 00:23:42.602540"], ["updated_at", "2016-03-23 00:23:42.602540"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
+=======
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.2ms)[0m  BEGIN
 Processing by ProductsController#admin as HTML
@@ -199,15 +246,24 @@ Processing by ProductsController#create as HTML
 Redirected to http://test.host/admin
 Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
   [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products"
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
 Processing by ProductsController#create as HTML
   Parameters: {"product"=>{"title"=>"test"}}
+<<<<<<< HEAD
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test"], ["created_at", "2016-03-23 00:23:42.607600"], ["updated_at", "2016-03-23 00:23:42.607600"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+=======
   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test"], ["created_at", "2016-03-23 03:23:43.183046"], ["updated_at", "2016-03-23 03:23:43.183046"]]
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
 Redirected to http://test.host/admin
 Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
@@ -216,15 +272,140 @@ Processing by ProductsController#create as HTML
 Unpermitted parameter: name
   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+<<<<<<< HEAD
+  Rendered products/_form.html.erb (2.6ms)
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+=======
   Rendered products/_form.html.erb (2.9ms)
   Rendered products/new.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms)
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
 Processing by ProductsController#create as HTML
   Parameters: {"product"=>{"name"=>"bad test"}}
 Unpermitted parameter: name
+<<<<<<< HEAD
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (2.3ms)
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.626913"], ["updated_at", "2016-03-23 00:23:42.626913"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>"test2"}, "id"=>"15"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "products" SET "title" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["title", "test2"], ["updated_at", "2016-03-23 00:23:42.630063"], ["id", 15]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.634485"], ["updated_at", "2016-03-23 00:23:42.634485"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>"test2"}, "id"=>"16"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "products" SET "title" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["title", "test2"], ["updated_at", "2016-03-23 00:23:42.637410"], ["id", 16]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.640527"], ["updated_at", "2016-03-23 00:23:42.640527"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>nil}, "id"=>"17"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered products/_form.html.erb (3.1ms)
+  Rendered products/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.654161"], ["updated_at", "2016-03-23 00:23:42.654161"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"title"=>nil}, "id"=>"18"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (2.7ms)
+  Rendered products/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.663876"], ["updated_at", "2016-03-23 00:23:42.663876"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 19]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "test1"], ["created_at", "2016-03-23 00:23:42.669872"], ["updated_at", "2016-03-23 00:23:42.669872"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "products" WHERE "products"."id" = $1  [["id", 20]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 1ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#index as HTML
+  Rendered products/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 00:23:42.683245"], ["updated_at", "2016-03-23 00:23:42.683245"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  Rendered products/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 00:23:42.691483"], ["updated_at", "2016-03-23 00:23:42.691483"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  Rendered products/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by ProductsController#admin as HTML
+Filter chain halted as #<Proc:0x007fb4e7843020@/Users/ieronimoltean/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+=======
   [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
   [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
   Rendered products/_form.html.erb (2.9ms)
@@ -341,10 +522,28 @@ Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
 Processing by ProductsController#admin as HTML
 Filter chain halted as #<Proc:0x007fab80d4a890@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
 Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
 Processing by ProductsController#new as HTML
+<<<<<<< HEAD
+Filter chain halted as #<Proc:0x007fb4e7843020@/Users/ieronimoltean/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "test"], ["created_at", "2016-03-23 00:23:42.701541"], ["updated_at", "2016-03-23 00:23:42.701541"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"23"}
+Filter chain halted as #<Proc:0x007fb4e7843020@/Users/ieronimoltean/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+=======
 Filter chain halted as #<Proc:0x007fab80d4a890@/usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
 Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  ROLLBACK
@@ -360,6 +559,7 @@ Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
@@ -371,6 +571,8 @@ Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
   [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+<<<<<<< HEAD
+=======
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.2ms)[0m  BEGIN
 Started GET "/" for 127.0.0.1 at 2016-03-22 20:36:24 -0700
@@ -643,3 +845,4 @@ Processing by ProductsController#admin as HTML
   Rendered products/admin.html.erb within layouts/application (3.7ms)
 Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.6ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+>>>>>>> 58f6b94b41b865ec75b2727c2ce6559e2ed282bd
